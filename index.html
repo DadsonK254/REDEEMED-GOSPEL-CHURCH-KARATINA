@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REDEEMED GOSPEL CHURCH KARATINA</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ====== GENERAL STYLES ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f0f8ff;
+      color: #0026fd;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a02f7 0%, #3634b3 100%);
+      color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    /* ====== NAVBAR ====== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+      transform: perspective(500px) rotateY(0deg);
+      transition: transform 0.5s ease;
+      border: 2px solid white;
+    }
+
+    .logo img:hover {
+      transform: perspective(500px) rotateY(15deg) scale(1.1);
+    }
+
+    .logo h1 {
+      font-size: 20px;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    /* ====== 3 DOTS MENU ====== */
+    .menu-icon {
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+      transform: rotate(0);
+      transition: transform 0.3s ease;
+      padding: 5px;
+    }
+
+    .menu-icon:hover {
+      transform: scale(1.2) rotate(90deg);
+    }
+
+    /* ====== DROPDOWN ====== */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      position: absolute;
+      right: 0;
+      top: 55px;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      min-width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .dropdown-content.show {
+      max-height: 500px;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #025180;
+      transition: all 0.2s ease;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .dropdown-content a:hover {
+      background: #032757;
+      color: rgb(0, 255, 234);
+      transform: translateX(5px);
+    }
+
+    /* ====== HERO SECTION ====== */
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+      background: 
+        linear-gradient(135deg, rgba(26, 2, 247, 0.7) 0%, rgba(54, 52, 179, 0.7) 100%),
+        url('images/church.png') center/cover no-repeat;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 1;
+      animation: fadeIn 2s ease;
+      max-width: 800px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero h2 {
+      font-size: 3em;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.3em;
+      margin: 20px 0 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #026613 0%, #028a1a 100%);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      display: inline-block;
+      font-weight: 600;
+      font-size: 1.1em;
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: scale(1.05) translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    /* ====== SECTIONS ====== */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #0026fd;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(135deg, #1a02f7 0%, #3634b3 100%);
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #555;
+    }
+    
+    /* ====== HISTORY PRESENTATION MODAL ====== */
+    .presentation-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .presentation-content {
+      background: white;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 1000px;
+      height: 80vh;
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+      position: relative;
+      animation: modalFadeIn 0.5s ease;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: translateY(-30px) scale(0.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .presentation-header {
+      background: linear-gradient(135deg, #1a02f7 0%, #3634b3 100%);
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .presentation-title {
+      font-size: 1.8em;
+      font-weight: 700;
+    }
+
+    .close-presentation {
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+      transition: transform 0.3s;
+    }
+
+    .close-presentation:hover {
+      transform: scale(1.2);
+    }
+
+    .presentation-body {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .presentation-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      text-align: center;
+    }
+
+    .presentation-slide.active {
+      opacity: 1;
+    }
+
+    .slide-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 30px;
+      border: 5px solid #0026fd;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .slide-title {
+      font-size: 2em;
+      color: #0026fd;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .slide-content {
+      font-size: 1.2em;
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #333;
+    }
+
+    .presentation-footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      background: #f5f5f5;
+      border-top: 1px solid #ddd;
+    }
+
+    .presentation-nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-btn {
+      background: linear-gradient(135deg, #1a02f7 0%, #3634b3 100%);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .nav-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .slide-indicators {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .slide-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ddd;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .slide-indicator.active {
+      background: #0026fd;
+      transform: scale(1.2);
+    }
+
+    /* ====== LEADERSHIP SECTION ====== */
+    .leadership {
+      background: 
+        linear-gradient(135deg, rgba(230, 255, 118, 0.322) 0%, rgba(105, 220, 255, 0.288) 100%),
+        url('images/rev.png') center/cover no-repeat;
+      color: #0026fd;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .leader-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .leader-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      padding: 30px;
+      max-width: 350px;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .leader-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .leader-card img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid #0026fd;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .leader-card h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #0026fd;
+      font-weight: 600;
+    }
+
+    .leader-card p {
+      color: #555;
+      font-size: 1.1em;
+      line-height: 1.5;
+    }
+
+    .leader-card .bio {
+      font-style: italic;
+      color: #333;
+      margin-top: 10px;
+    }
+    /* ====== PASTORS SECTION ====== */
+    .pastors {
+      background: 
+        linear-gradient(135deg, rgba(2, 81, 128, 0.85) 0%, rgba(3, 39, 87, 0.85) 100%),
+        url('images/pastors-bg.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .pastors .section-title,
+    .pastors .section-subtitle {
+      color: white;
+    }
+
+    .pastors .section-title::after {
+      background: linear-gradient(135deg, #ffb84d 0%, #ff9800 100%);
+    }
+
+    .pastors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .pastor-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      padding: 30px;
+      transition: all 0.3s ease;
+      color: #0026fd;
+    }
+
+    .pastor-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    .pastor-card img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid #0026fd;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .pastor-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.3em;
+      font-weight: 600;
+      color: #0026fd;
+    }
+
+    .pastor-card p {
+      color: #333;
+      font-size: 1.1em;
+    }
+
+    @media (max-width: 600px) {
+      .pastors-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Sermon Section */
+    .sermon {
+      background: 
+        linear-gradient(135deg, rgba(2, 102, 19, 0.658) 0%, rgba(2, 138, 27, 0.568) 100%),
+        url('images/sermon.png') center/cover no-repeat;
+      color: white;
+    }
+
+    .sermon .section-title,
+    .sermon .section-subtitle {
+      color: white;
+    }
+
+    .sermon .section-title::after {
+      background: linear-gradient(135deg, #ffb84d 0%, #ff9800 100%);
+    }
+
+    .video-container {
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+      border: 3px solid rgba(255,255,255,0.2);
+    }
+
+    .sermon iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
+
+
+    /* Events Section */
+    .events {
+      background: 
+        linear-gradient(135deg, rgba(255, 184, 77, 0.85) 0%, rgba(255, 152, 0, 0.85) 100%),
+        url('images/events.png') center/cover no-repeat;
+      color: #333;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .event-card {
+      background: rgba(255, 245, 156, 0.904);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    .event-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .event-card h3 {
+      color: #0026fd;
+      margin-bottom: 15px;
+      font-size: 1.4em;
+      font-weight: 600;
+    }
+
+    .event-card p {
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    .event-date {
+      font-weight: bold;
+      color: #026613;
+      font-size: 1.1em;
+      background: rgba(2, 102, 19, 0.1);
+      padding: 8px 15px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    /* Ministries Section */
+    .ministries {
+      background: 
+        linear-gradient(135deg, rgba(54, 52, 179, 0.85) 0%, rgba(26, 2, 247, 0.85) 100%),
+        url('images/ministry.png') center/cover no-repeat;
+      color: white;
+    }
+
+    .ministries .section-title,
+    .ministries .section-subtitle {
+      color: white;
+    }
+
+    .ministries .section-title::after {
+      background: linear-gradient(135deg, #ffb84d 0%, #ff9800 100%);
+    }
+
+    .ministries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .ministry-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 30px;
+      color: #333;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    .ministry-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .ministry-card i {
+      font-size: 3em;
+      color: #0026fd;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #1a02f7 0%, #3634b3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ministry-card h3 {
+      color: #0026fd;
+      margin-bottom: 15px;
+      font-size: 1.4em;
+      font-weight: 600;
+    }
+
+    .ministry-card p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: 
+        linear-gradient(135deg, rgba(3, 39, 87, 0.85) 0%, rgba(2, 81, 128, 0.85) 100%),
+        url('images/contact-bg.jpg') center/cover no-repeat;
+      color: white;
+    }
+
+    .contact .section-title,
+    .contact .section-subtitle {
+      color: white;
+    }
+
+    .contact .section-title::after {
+      background: linear-gradient(135deg, #ffb84d 0%, #ff9800 100%);
+    }
+
+    .contact-info {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .contact-item {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 30px;
+      color: #333;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    .contact-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .contact-item i {
+      font-size: 2.5em;
+      color: #0026fd;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #1a02f7 0%, #3634b3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .contact-item h3 {
+      color: #0026fd;
+      margin-bottom: 15px;
+      font-size: 1.3em;
+      font-weight: 600;
+    }
+
+    .contact-item p {
+      color: #555;
+      font-size: 1.1em;
+    }
+
+    /* Give Section with 3D Account Details */
+    .give {
+      background: 
+        linear-gradient(135deg, rgba(25, 243, 79, 0.384) 0%, rgba(8, 221, 47, 0.425) 100%),
+        url('images/giviie.jpg') center/cover no-repeat;
+      color: rgb(0, 0, 0);
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .give-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .account-details-3d {
+      perspective: 1000px;
+      margin-bottom: 30px;
+    }
+
+    .account-card {
+      background: linear-gradient(135deg, #0026fd 0%, #3634b3 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      transform-style: preserve-3d;
+      transition: transform 0.5s ease;
+      position: relative;
+    }
+
+    .account-card:hover {
+      transform: rotateY(5deg) rotateX(5deg) translateY(-5px);
+    }
+
+    .account-card::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      transform: translateZ(-10px);
+      pointer-events: none;
+    }
+
+    .account-card::after {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      transform: translateZ(-20px);
+      pointer-events: none;
+    }
+
+    .account-info {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      text-align: left;
+      transform: translateZ(20px);
+    }
+
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .give-instructions {
+      background: rgba(255, 255, 255, 0.4);
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 30px;
+    }
+
+    .give-instructions h3 {
+      color: #0026fd;
+      margin-bottom: 20px;
+      font-size: 1.5em;
+    }
+
+    .give-instructions ol {
+      text-align: left;
+      max-width: 500px;
+      margin: 0 auto;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .give-instructions li {
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background: linear-gradient(135deg, #3634b3 0%, #1a02f7 100%);
+      color: #fff;
+      text-align: center;
+      padding: 40px 15px;
+      font-size: 0.9em;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .social-links {
+      margin: 25px 0;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.8em;
+      margin: 0 15px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .social-links a:hover {
+      color: #00ffea;
+      transform: translateY(-5px) scale(1.2);
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2.2em;
+      }
+      
+      .section-title {
+        font-size: 2em;
+      }
+      
+      .sermon iframe {
+        height: 300px;
+      }
+      
+      .logo h1 {
+        font-size: 16px;
+      }
+      
+      .hero {
+        padding: 80px 20px;
+        min-height: 60vh;
+      }
+      
+      .presentation-content {
+        width: 95%;
+        height: 85vh;
+      }
+      
+      .slide-title {
+        font-size: 1.6em;
+      }
+      
+      .slide-content {
+        font-size: 1em;
+      }
+      
+      .info-item {
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 1.8em;
+      }
+      
+      .section-title {
+        font-size: 1.8em;
+      }
+      
+      .btn {
+        padding: 12px 25px;
+        font-size: 1em;
+      }
+      
+      .events-grid,
+      .ministries-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .presentation-footer {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <!-- YOUR CHURCH LOGO - Replace with your actual logo -->
+        <img src="images/logo.png" alt="Redeemed Gospel Church Karatina Logo" />
+        <h1>Redeemed Gospel Church Karatina</h1>
+      </div>
+
+      <!-- Dropdown Menu with 3 dots -->
+      <div class="dropdown">
+        <button class="menu-icon" onclick="toggleMenu()">⋮</button>
+        <div class="dropdown-content" id="menuDropdown">
+          <a onclick="scrollToSection('hero')">Home</a>
+          <a onclick="scrollToSection('leadership')">About</a>
+          <a onclick="scrollToSection('sermon')">Latest Sermon</a>
+          <a onclick="scrollToSection('ministries')">Ministries</a>
+          <a onclick="scrollToSection('events')">Events</a>
+          <a onclick="scrollToSection('give')">Give</a>
+          <a onclick="scrollToSection('contact')">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <h2>Welcome to Redeemed Gospel Church Karatina</h2>
+      <p>"A place of hope, faith, and transformation."</p>
+      <a class="btn" onclick="openPresentation()">Learn More</a>
+    </div>
+  </section>
+  
+  <section class="leadership" id="leadership">
+    <h2 class="section-title">Church Leadership</h2>
+    <p class="section-subtitle">Meet the servant leaders guiding our church community.</p>
+
+    <div class="leader-container">
+      <div class="leader-card">
+        <img src="images/rev2.jpg" alt="Reverend Photo">
+        <h3>Rev.Dr.Moses Kamau</h3>
+        <p>Senior Pastor, Redeemed Gospel Church Karatina</p>
+        <p class="bio">A passionate servant of God dedicated to teaching, shepherding, and building a Christ-centered community.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pastors" id="pastors">
+    <h2 class="section-title">Some of Our Pastors</h2>
+    <p class="section-subtitle">Meet the devoted pastors serving in various ministries.</p>
+
+    <div class="pastors-grid">
+      <div class="pastor-card">
+        <img src="images/ps 1.jpg" alt="Pastor 1">
+        <h3>Pastor Jerious</h3>
+        <p>Empowered by faith, uplifting women to walk in purpose, dignity, and grace — nurturing their God-given potential for a brighter world.</p>
+      </div>
+
+      <div class="pastor-card">
+        <img src="images/ps 2.jpg" alt="Pastor 2">
+        <h3>Pastor Simon</h3>
+        <p>A prayerful pastor devoted to seeking God's presence — standing in the gap, guiding men and women into divine strength, restoration, and spiritual breakthrough.</p>
+      </div>
+
+      <div class="pastor-card">
+        <img src="images/ps 3.jpg" alt="Pastor 2">
+        <h3>Pastor Mbutu</h3>
+        <p>A dedicated pastor inspiring spiritual growth and awareness — empowering believers to stay alert in faith, life, and the digital world with wisdom and purpose.</p>
+      </div>
+      
+      <div class="pastor-card">
+        <img src="images/ps 4.jpg" alt="Pastor 3">
+        <h3>Pastor Thumbi</h3>
+        <p>A compassionate pastor devoted to inspiring the next generation — visiting schools to empower youth with faith, purpose, and hope for a brighter future.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sermon" id="sermon">
+    <h2 class="section-title">Latest Sermon</h2>
+    <p class="section-subtitle">Watch our latest message and be encouraged.</p>
+    <div class="video-container">
+      <!-- FIXED YouTube embed link -->
+      <iframe
+        src="https://www.youtube.com/embed/ou8YA54Bbew"
+        title="Sermon Video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </section>
+
+  <section class="events" id="events">
+    <h2 class="section-title">Upcoming Events</h2>
+    <p class="section-subtitle">Join us for worship, fellowship, and community activities.</p>
+    
+    <div class="events-grid">
+      <div class="event-card">
+        <h3>Sunday Service</h3>
+        <p class="event-date">Every Sunday at 9:00 AM</p>
+        <p>Join us for worship, prayer, and the Word of God.</p>
+      </div>
+      
+      <div class="event-card">
+        <h3>Online Bible Study</h3>
+        <p class="event-date">Wednesdays at 8:00 PM</p>
+        <p>Deep dive into the Scriptures with our pastor.</p>
+      </div>
+      
+      <div class="event-card">
+        <h3>Online Youth Fellowship</h3>
+        <p class="event-date">Thursdays at 9:00 PM</p>
+        <p>Special gathering for our youth community.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="give" id="give">
+    <h2 class="section-title">Give</h2>
+    <p class="section-subtitle">Support our ministry and help us impact lives through your generous giving.</p>
+
+    <div class="give-container">
+      <div class="account-details-3d">
+        <div class="account-card">
+          <div style="transform: translateZ(20px);">
+            <h3 style="margin-bottom: 20px; font-size: 1.5em;">Bank Account Details</h3>
+            <div class="account-info">
+              <div class="info-item">
+                <span style="font-weight: bold;">Paybill Number:</span>
+                <span style="font-size: 1.2em;">522533</span>
+              </div>
+              <div class="info-item">
+                <span style="font-weight: bold;">Account Number:</span>
+                <span style="font-size: 1.2em;">7621229</span>
+              </div>
+              <div class="info-item">
+                <span style="font-weight: bold;">Account Name:</span>
+                <span style="font-size: 1.1em;">Redeemed Gospel Church Karatina</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="give-instructions">
+        <h3>How to Give</h3>
+        <ol>
+          <li>Go to M-Pesa on your phone</li>
+          <li>Select "Lipa na M-Pesa"</li>
+          <li>Select "Pay Bill"</li>
+          <li>Enter Business Number: <strong>522533</strong></li>
+          <li>Enter Account Number: <strong>7621229</strong></li>
+          <li>Enter the amount you wish to give</li>
+          <li>Enter your M-Pesa PIN and confirm</li>
+        </ol>
+        <p style="margin-top: 20px; font-style: italic;">Your contributions help us reach the community with the love of Christ. Thank you for giving generously!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ministries" id="ministries">
+    <h2 class="section-title">Our Ministries</h2>
+    <p class="section-subtitle">Get involved in our various church ministries.</p>
+    
+    <div class="ministries-grid">
+      <div class="ministry-card">
+        <i class="fas fa-hands-helping"></i>
+        <h3>Outreach Ministry</h3>
+        <p>Spreading the gospel and helping those in need in our community.</p>
+      </div>
+      
+      <div class="ministry-card">
+        <i class="fas fa-music"></i>
+        <h3>Worship Team</h3>
+        <p>Leading the congregation in praise and worship during services.</p>
+      </div>
+      
+      <div class="ministry-card">
+        <i class="fas fa-child"></i>
+        <h3>Children's Ministry</h3>
+        <p>Teaching children about God's love in fun and engaging ways.</p>
+      </div>
+      
+      <div class="ministry-card">
+        <i class="fas fa-users"></i>
+        <h3>Families</h3>
+        <p>Connect with others in Families, more intimate fellowship settings.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <p class="section-subtitle">We'd love to hear from you. Get in touch with us.</p>
+    
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Location</h3>
+        <p>Karatina Town, Nyeri County,jambo-kagochi road</p>
+      </div>
+      
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <h3>Phone</h3>
+        <p>+254 722265870</p>
+      </div>
+      
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p>karatinaredeemedgospelchurch@gmail.com</p>
+      </div>
+      
+      <div class="contact-item">
+        <i class="fas fa-clock"></i>
+        <h3>Service Times</h3>
+        <p>Sunday:Morning Service 8:00 AM - 10:20 AM</p>
+        <p>Main Service 10:30AM - 1:00PM</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+      <p>© 2025 Redeemed Gospel Church Karatina | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- History Presentation Modal -->
+  <div class="presentation-modal" id="presentationModal">
+    <div class="presentation-content">
+      <div class="presentation-header">
+        <h2 class="presentation-title">Our History & Mission</h2>
+        <button class="close-presentation" onclick="closePresentation()">&times;</button>
+      </div>
+      
+      <div class="presentation-body">
+        <!-- Slide 1 -->
+        <div class="presentation-slide active" id="slide1">
+          <img src="images/logo.png" alt="Church History" class="slide-image">
+          <h3 class="slide-title">Our Humble Beginnings</h3>
+          <p class="slide-content">
+            The Redeemed Gospel Church was founded in 1979 by <strong>Bishop Arthur Kitonga</strong>, who began with a vision to reach the lost and transform communities through the power of the Gospel. What started as a small fellowship in Nairobi, Kenya, quickly grew into a dynamic movement as people responded to the message of hope and redemption.
+          </p>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="presentation-slide" id="slide2">
+          <img src="images/church.png" alt="Church Growth" class="slide-image">
+          <h3 class="slide-title">Rapid Growth & Expansion</h3>
+          <p class="slide-content">
+            In the early years, the church emphasized evangelism, discipleship, and nurturing believers in their faith journey. The movement expanded rapidly across Kenya and beyond, establishing churches in urban centers and rural areas alike, always maintaining its commitment to biblical teaching and practical ministry.
+          </p>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="presentation-slide" id="slide3">
+          <img src="images/rev2.jpg" alt="Karatina Church" class="slide-image">
+          <h3 class="slide-title">Redeemed Gospel Church Karatina</h3>
+          <p class="slide-content">
+            <strong>Redeemed Gospel Church Karatina</strong> was planted as part of this growing network, bringing the same life-changing message to the people of Karatina and surrounding communities. Under the leadership of our dedicated pastors, we continue the original vision of our founders - to see lives transformed by the power of Jesus Christ.
+          </p>
+        </div>
+        
+        <!-- Slide 4 -->
+        <div class="presentation-slide" id="slide4">
+          <img src="images/ministry.png" alt="Church Today" class="slide-image">
+          <h3 class="slide-title">Our Mission Today</h3>
+          <p class="slide-content">
+            Today, Redeemed Gospel Church stands as one of Kenya's largest evangelical movements, with thousands of churches across the nation and international presence, all united in the mission to "know Christ and make Him known." Our mission is to proclaim the Gospel of Jesus Christ, disciple believers, and demonstrate God's love through compassionate ministry to all people.
+          </p>
+        </div>
+      </div>
+      
+      <div class="presentation-footer">
+        <div class="presentation-nav">
+          <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">Previous</button>
+          <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next</button>
+        </div>
+        
+        <div class="slide-indicators">
+          <span class="slide-indicator active" onclick="goToSlide(0)"></span>
+          <span class="slide-indicator" onclick="goToSlide(1)"></span>
+          <span class="slide-indicator" onclick="goToSlide(2)"></span>
+          <span class="slide-indicator" onclick="goToSlide(3)"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Navigation functions
+    function toggleMenu() {
+      document.getElementById("menuDropdown").classList.toggle("show");
+    }
+
+    // Close dropdown if user clicks outside
+    window.onclick = function (event) {
+      if (!event.target.matches(".menu-icon")) {
+        const dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+          const openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains("show")) {
+            openDropdown.classList.remove("show");
+          }
+        }
+      }
+    };
+
+    // Function to scroll to a specific section
+    function scrollToSection(sectionId) {
+      // Close the dropdown menu
+      document.getElementById("menuDropdown").classList.remove("show");
+      
+      // Find the target section
+      const targetSection = document.getElementById(sectionId);
+      
+      // Scroll to the section with smooth behavior
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Add interactive 3D effect to the account card
+    document.addEventListener('DOMContentLoaded', function() {
+      const accountCard = document.querySelector('.account-card');
+      
+      // Mouse move effect for enhanced 3D
+      accountCard.addEventListener('mousemove', function(e) {
+        const cardRect = this.getBoundingClientRect();
+        const cardCenterX = cardRect.left + cardRect.width / 2;
+        const cardCenterY = cardRect.top + cardRect.height / 2;
+        
+        const mouseX = e.clientX - cardCenterX;
+        const mouseY = e.clientY - cardCenterY;
+        
+        const rotateY = mouseX / 20;
+        const rotateX = -mouseY / 20;
+        
+        this.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) translateY(-5px)`;
+      });
+      
+      // Reset transform when mouse leaves
+      accountCard.addEventListener('mouseleave', function() {
+        this.style.transform = 'rotateY(0) rotateX(0) translateY(0)';
+      });
+    });
+
+    // History Presentation Functions
+    let currentSlide = 0;
+    const totalSlides = 4;
+
+    function openPresentation() {
+      document.getElementById('presentationModal').style.display = 'flex';
+      currentSlide = 0;
+      showSlide(currentSlide);
+    }
+
+    function closePresentation() {
+      document.getElementById('presentationModal').style.display = 'none';
+    }
+
+    function changeSlide(direction) {
+      currentSlide += direction;
+      if (currentSlide < 0) currentSlide = 0;
+      if (currentSlide >= totalSlides) currentSlide = totalSlides - 1;
+      showSlide(currentSlide);
+    }
+
+    function goToSlide(slideIndex) {
+      currentSlide = slideIndex;
+      showSlide(currentSlide);
+    }
+
+    function showSlide(slideIndex) {
+      // Hide all slides
+      const slides = document.querySelectorAll('.presentation-slide');
+      slides.forEach(slide => {
+        slide.classList.remove('active');
+      });
+      
+      // Show current slide
+      slides[slideIndex].classList.add('active');
+      
+      // Update indicators
+      const indicators = document.querySelectorAll('.slide-indicator');
+      indicators.forEach((indicator, index) => {
+        if (index === slideIndex) {
+          indicator.classList.add('active');
+        } else {
+          indicator.classList.remove('active');
+        }
+      });
+      
+      // Update button states
+      document.getElementById('prevBtn').disabled = (slideIndex === 0);
+      document.getElementById('nextBtn').disabled = (slideIndex === totalSlides - 1);
+    }
+
+    // Close modal if clicked outside
+    window.onclick = function(event) {
+      const modal = document.getElementById('presentationModal');
+      if (event.target === modal) {
+        closePresentation();
+      }
+    };
+
+    // Keyboard navigation for presentation
+    document.addEventListener('keydown', function(event) {
+      const modal = document.getElementById('presentationModal');
+      if (modal.style.display === 'flex') {
+        if (event.key === 'ArrowLeft') {
+          changeSlide(-1);
+        } else if (event.key === 'ArrowRight') {
+          changeSlide(1);
+        } else if (event.key === 'Escape') {
+          closePresentation();
+        }
+      }
+    });
+  </script>
+</body>
+</html>

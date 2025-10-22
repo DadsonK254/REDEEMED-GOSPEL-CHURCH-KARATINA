@@ -1,0 +1,161 @@
+/* ====== GLOBAL STYLES ====== */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  color: #222;
+  background-color: #5e90ee;
+  overflow-x: hidden;
+}
+
+header {
+  background: #003366;
+  color: #06ffff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transform: perspective(500px) rotateY(0deg);
+  transition: transform 0.6s ease;
+}
+
+.logo img:hover {
+  transform: perspective(500px) rotateY(15deg);
+}
+
+.logo h1 {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* ====== 3 DOT MENU ====== */
+.menu-icon {
+  font-size: 28px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #06ffff;
+  transition: transform 0.3s ease;
+}
+
+.menu-icon:hover {
+  transform: rotate(90deg) scale(1.2);
+}
+
+/* ====== DROPDOWN MENU ====== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  right: 0;
+  top: 55px;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  min-width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+
+  /* hidden by default */
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+
+.dropdown-content.show {
+  max-height: 500px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #003366;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dropdown-content a:hover {
+  background: #06ffff;
+  color: #003366;
+}
+
+/* ====== HERO SECTION ====== */
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+  background: url('../images/church.png') center/cover no-repeat fixed;
+  padding: 120px 20px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 51, 102, 0.6));
+  z-index: 0;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 25px;
+  color: #e0f7ff;
+}
+
+.btn {
+  background-color: #06ffff;
+  color: #003366;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius:
